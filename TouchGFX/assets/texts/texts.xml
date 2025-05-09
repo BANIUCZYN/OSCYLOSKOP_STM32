@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TextDatabase xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="texts.xsd" Version="4.25.0">
+  <Languages>
+    <Language Id="GB" />
+  </Languages>
+  <Texts>
+    <TextGroup Id="Group1" />
+    <TextGroup Id="Unsorted">
+      <Text Id="__SingleUse_DRSG" Alignment="Center" TypographyId="Large">
+        <Translation Language="GB">OK</Translation>
+      </Text>
+      <Text Id="__SingleUse_ANKB" Alignment="Center" TypographyId="Large">
+        <Translation Language="GB">VAL</Translation>
+      </Text>
+      <Text Id="__SingleUse_SL1Z" Alignment="Center" TypographyId="Large">
+        <Translation Language="GB">/10</Translation>
+      </Text>
+      <Text Id="__SingleUse_CFFG" Alignment="Center" TypographyId="Large">
+        <Translation Language="GB">x10</Translation>
+      </Text>
+      <Text Id="__SingleUse_2FC0" Alignment="Center" TypographyId="Large">
+        <Translation Language="GB">+1</Translation>
+      </Text>
+      <Text Id="__SingleUse_ACLC" Alignment="Center" TypographyId="Large">
+        <Translation Language="GB">-1</Translation>
+      </Text>
+      <Text Id="TRIG_BTN_WC" Alignment="Left" TypographyId="Default">
+        <Translation Language="GB">AUTO</Translation>
+      </Text>
+      <Text Id="Trig_btn_txt__" Alignment="Center" TypographyId="Default">
+        <Translation Language="GB">&lt;TRIG_BTN_WC&gt;</Translation>
+      </Text>
+      <Text Id="Trig_btn_txt" Alignment="Center" TypographyId="Default">
+        <Translation Language="GB">&lt;&gt;</Translation>
+      </Text>
+      <Text Id="TYPE_BTN_WC" Alignment="Left" TypographyId="Default">
+        <Translation Language="GB">DC</Translation>
+      </Text>
+      <Text Id="Type_btn_txt" Alignment="Center" TypographyId="Default">
+        <Translation Language="GB">&lt;TYPE_BTN_WC&gt;</Translation>
+      </Text>
+      <Text Id="VISIB_BTN_WC" Alignment="Left" TypographyId="Default">
+        <Translation Language="GB">OFF</Translation>
+      </Text>
+      <Text Id="Visib_btn_txt" Alignment="Center" TypographyId="Default">
+        <Translation Language="GB">&lt;VISIB_BTN_WC&gt;</Translation>
+      </Text>
+      <Text Id="CH_BTN_WC" Alignment="Left" TypographyId="Default">
+        <Translation Language="GB">1</Translation>
+      </Text>
+      <Text Id="__SingleUse_CLRC" Alignment="Left" TypographyId="Default">
+        <Translation Language="GB">Y pos.</Translation>
+      </Text>
+      <Text Id="__SingleUse_3BK8" Alignment="Left" TypographyId="Default">
+        <Translation Language="GB">Scale</Translation>
+      </Text>
+      <Text Id="__SingleUse_DURV" Alignment="Left" TypographyId="Default">
+        <Translation Language="GB">Trig.</Translation>
+      </Text>
+      <Text Id="__SingleUse_PLB4" Alignment="Left" TypographyId="Default">
+        <Translation Language="GB">Type</Translation>
+      </Text>
+      <Text Id="__SingleUse_VPBR" Alignment="Center" TypographyId="Default">
+        <Translation Language="GB">Measurements</Translation>
+      </Text>
+      <Text Id="__SingleUse_WQIV" Alignment="Left" TypographyId="Default">
+        <Translation Language="GB">Visib.</Translation>
+      </Text>
+      <Text Id="__SingleUse_CNRE" Alignment="Center" TypographyId="Default">
+        <Translation Language="GB">FFT</Translation>
+      </Text>
+      <Text Id="Channel_btn_txt" Alignment="Center" TypographyId="Default">
+        <Translation Language="GB">Channel &lt;CH_BTN_WC&gt;</Translation>
+      </Text>
+      <Text Id="__SingleUse_CINE" Alignment="Center" TypographyId="Default">
+        <Translation Language="GB">Timebase</Translation>
+      </Text>
+      <Text Id="__SingleUse_6X5U" Alignment="Left" TypographyId="Default">
+        <Translation Language="GB">Aquisition</Translation>
+      </Text>
+    </TextGroup>
+  </Texts>
+  <Typographies>
+    <Typography Id="Default" Font="consolab.ttf" Size="20" Bpp="4" IsVector="no" Direction="LTR" FallbackCharacter="?" />
+    <Typography Id="Large" Font="consolab.ttf" Size="30" Bpp="4" IsVector="no" Direction="LTR" FallbackCharacter="?" />
+    <Typography Id="Small" Font="verdana.ttf" Size="10" Bpp="4" IsVector="no" Direction="LTR" FallbackCharacter="?" />
+  </Typographies>
+</TextDatabase>

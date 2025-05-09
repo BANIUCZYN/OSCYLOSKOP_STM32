@@ -1,0 +1,75 @@
+# === Systemowe ===
+.DS_Store
+Thumbs.db
+~$*
+
+# === IDEs i edytory ===
+*.user
+*.swp
+*.swo
+*.log
+*.launch
+*.bak
+*.tmp
+*.code-workspace
+
+# === STM32CubeIDE ===
+/build/
+/Debug/
+/Release/
+*.o
+*.d
+*.elf
+*.bin
+*.hex
+*.map
+*.lst
+*.dep
+
+# === TouchGFX ===
+/TouchGFX/build/
+/TouchGFX/generated/
+/TouchGFX/gui_generated/
+/TouchGFX/assets/__generated/
+/TouchGFX/simulator/
+/TouchGFX/MINGW32_NT-6.2/
+/TouchGFX/*.log
+/TouchGFX/*.dll
+/TouchGFX/*.exe
+
+# === Kompilatory i toolchainy ===
+*.obj
+*.lib
+*.a
+*.out
+*.srec
+
+# === Keil / MDK-ARM ===
+*.axf
+*.tra
+*.iex
+*.uvguix.*
+*.uvoptx
+*.uvprojx
+*.sct
+
+# === IAR / EWARM ===
+*.ewd
+*.ewp
+*.ewt
+*.eww
+*.icf
+
+# === GCC ===
+/gcc/Debug/
+/gcc/Release/
+/gcc/*.o
+
+# === VSCode i IntelliJ ===
+.vscode/
+/.idea/
+
+# === Binarki i biblioteki w Middlewares ===
+/Middlewares/**/lib/**/*.dll
+/Middlewares/**/lib/**/*.a
+/Middlewares/**/lib/**/*.lib
