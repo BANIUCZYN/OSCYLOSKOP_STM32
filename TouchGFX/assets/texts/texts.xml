@@ -6,6 +6,30 @@
   <Texts>
     <TextGroup Id="Group1" />
     <TextGroup Id="Unsorted">
+      <Text Id="TRIG_BTN_WC" Alignment="Left" TypographyId="Default">
+        <Translation Language="GB">AUTO</Translation>
+      </Text>
+      <Text Id="Trig_btn_txt" Alignment="Center" TypographyId="Default">
+        <Translation Language="GB">&lt;TRIG_BTN_WC&gt;</Translation>
+      </Text>
+      <Text Id="TYPE_BTN_WC" Alignment="Left" TypographyId="Default">
+        <Translation Language="GB">DC</Translation>
+      </Text>
+      <Text Id="Type_btn_txt" Alignment="Center" TypographyId="Default">
+        <Translation Language="GB">&lt;TYPE_BTN_WC&gt;</Translation>
+      </Text>
+      <Text Id="VISIB_BTN_WC" Alignment="Left" TypographyId="Default">
+        <Translation Language="GB">OFF</Translation>
+      </Text>
+      <Text Id="Visib_btn_txt" Alignment="Center" TypographyId="Default">
+        <Translation Language="GB">&lt;VISIB_BTN_WC&gt;</Translation>
+      </Text>
+      <Text Id="CH_BTN_WC" Alignment="Left" TypographyId="Default">
+        <Translation Language="GB">1</Translation>
+      </Text>
+      <Text Id="Channel_btn_txt" Alignment="Center" TypographyId="Default">
+        <Translation Language="GB">Channel &lt;CH_BTN_WC&gt;</Translation>
+      </Text>
       <Text Id="__SingleUse_DRSG" Alignment="Center" TypographyId="Large">
         <Translation Language="GB">OK</Translation>
       </Text>
@@ -23,30 +47,6 @@
       </Text>
       <Text Id="__SingleUse_ACLC" Alignment="Center" TypographyId="Large">
         <Translation Language="GB">-1</Translation>
-      </Text>
-      <Text Id="TRIG_BTN_WC" Alignment="Left" TypographyId="Default">
-        <Translation Language="GB">AUTO</Translation>
-      </Text>
-      <Text Id="Trig_btn_txt__" Alignment="Center" TypographyId="Default">
-        <Translation Language="GB">&lt;TRIG_BTN_WC&gt;</Translation>
-      </Text>
-      <Text Id="Trig_btn_txt" Alignment="Center" TypographyId="Default">
-        <Translation Language="GB">&lt;&gt;</Translation>
-      </Text>
-      <Text Id="TYPE_BTN_WC" Alignment="Left" TypographyId="Default">
-        <Translation Language="GB">DC</Translation>
-      </Text>
-      <Text Id="Type_btn_txt" Alignment="Center" TypographyId="Default">
-        <Translation Language="GB">&lt;TYPE_BTN_WC&gt;</Translation>
-      </Text>
-      <Text Id="VISIB_BTN_WC" Alignment="Left" TypographyId="Default">
-        <Translation Language="GB">OFF</Translation>
-      </Text>
-      <Text Id="Visib_btn_txt" Alignment="Center" TypographyId="Default">
-        <Translation Language="GB">&lt;VISIB_BTN_WC&gt;</Translation>
-      </Text>
-      <Text Id="CH_BTN_WC" Alignment="Left" TypographyId="Default">
-        <Translation Language="GB">1</Translation>
       </Text>
       <Text Id="__SingleUse_CLRC" Alignment="Left" TypographyId="Default">
         <Translation Language="GB">Y pos.</Translation>
@@ -68,9 +68,6 @@
       </Text>
       <Text Id="__SingleUse_CNRE" Alignment="Center" TypographyId="Default">
         <Translation Language="GB">FFT</Translation>
-      </Text>
-      <Text Id="Channel_btn_txt" Alignment="Center" TypographyId="Default">
-        <Translation Language="GB">Channel &lt;CH_BTN_WC&gt;</Translation>
       </Text>
       <Text Id="__SingleUse_CINE" Alignment="Center" TypographyId="Default">
         <Translation Language="GB">Timebase</Translation>
