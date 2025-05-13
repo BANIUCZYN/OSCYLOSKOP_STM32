@@ -8,18 +8,37 @@ Channel_settings::Channel_settings()
 	ch_y_pos_val(0)
 {}
 
-void Channel_settings::toggle_bin_setting(int setting)
+void Channel_settings::toggle_bin_setting(Channel_setting_type setting)
 {
 	switch (setting)
 	{
-	case 1:
+	case VISIB:
 		ch_visib_val = !ch_visib_val;
 		break;
-	case 2:
+	case TYPE:
 		ch_type_val = !ch_type_val;
 		break;
-	case 3:
+	case TRIG:
 		ch_trig_val = !ch_trig_val;
+		break;
+	}
+}
+
+const char* Channel_settings::get_ch_text(Channel_setting_type setting) const
+{
+	switch (setting)
+	{
+	case VISIB:
+		return ch_visib_val ? "ON" : "OFF";
+		break;
+	case TYPE:
+		return ch_type_val ? "AC" : "DC";
+		break;
+	case TRIG:
+		return ch_trig_val ? "MANUAL" : "AUTO";
+		break;
+	default:
+		return "ERR";
 		break;
 	}
 }

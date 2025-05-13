@@ -111,6 +111,7 @@
     "CustomContainerDefinitions": [
       {
         "Name": "Options_panel",
+        "Y": -1,
         "Width": 200,
         "Height": 480,
         "Components": [

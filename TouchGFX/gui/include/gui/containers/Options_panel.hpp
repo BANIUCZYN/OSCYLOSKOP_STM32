@@ -19,7 +19,11 @@ public:
 
     virtual void initialize();
 
-    void Update_displayed_settings();
+    void Update_all_disp_ch_settings();
+    void Update_btn_text(touchgfx::WildcardTextButtonStyle<touchgfx::BoxWithBorderButtonStyle<touchgfx::ClickButtonTrigger>>* btn,
+        touchgfx::Unicode::UnicodeChar* buffer,
+        const uint16_t buffer_size,
+        Channel_setting_type setting);
 
     virtual void Toggle_channel();
     virtual void Toggle_ch_visib();
