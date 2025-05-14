@@ -21,24 +21,8 @@ public:
 	Channel_settings();
 
 	void toggle_bin_setting(Channel_setting_type setting);
-	
-	const char* get_ch_visib_text() const {
-		return ch_visib_val ? "ON" : "OFF"; }
-	/*
-	const char* get_ch_type_text() const {
-		return ch_type_val ? "AC" : "DC"; }
-	const char* get_ch_trig_text() const {
-		return ch_trig_val ? "MANUAL" : "AUTO"; }
-
-	const char* get_ch_text(touchgfx::WildcardTextButtonStyle < touchgfx::BoxWithBorderButtonStyle<touchgfx::ClickButtonTrigger> Btn);
-	*/
 
 	const char* get_ch_text(Channel_setting_type setting) const;
-
-	/*void get_ch_visib_text(touchgfx::Unicode::UnicodeChar* buffer, const uint16_t bufferSize) const;
-	void get_ch_visib_text(touchgfx::Unicode::UnicodeChar* buffer, const uint16_t bufferSize) const;
-	void get_ch_visib_text(touchgfx::Unicode::UnicodeChar* buffer, const uint16_t bufferSize) const;
-	*/
 
 	bool get_ch_visib_val() const { return ch_visib_val; }
 	bool get_ch_type_val() const { return ch_type_val; }

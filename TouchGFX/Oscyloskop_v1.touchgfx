@@ -103,6 +103,13 @@
             "Width": 200,
             "Height": 480,
             "CustomContainerDefinitionName": "Options_panel"
+          },
+          {
+            "Type": "CustomContainerInstance",
+            "Name": "value_editor_panel1",
+            "Width": 800,
+            "Height": 480,
+            "CustomContainerDefinitionName": "Value_editor_panel"
           }
         ],
         "Interactions": []
@@ -171,6 +178,28 @@
             },
             "ButtonStyles": [
               {
+                "Type": "TextButtonStyle",
+                "X": 45,
+                "Y": 3,
+                "TextId": "Y_pos_btn_txt",
+                "TextRotation": "0",
+                "Wildcard1": {
+                  "TextId": "Y_POS_BTN_WC",
+                  "UseBuffer": true,
+                  "BufferSize": 10
+                },
+                "ColorReleased": {
+                  "Red": 255,
+                  "Green": 255,
+                  "Blue": 255
+                },
+                "ColorPressed": {
+                  "Red": 255,
+                  "Green": 255,
+                  "Blue": 255
+                }
+              },
+              {
                 "Type": "BoxWithBorderButtonStyle",
                 "X": 2,
                 "Width": 176,
@@ -205,6 +234,28 @@
               "Type": "ClickButtonTrigger"
             },
             "ButtonStyles": [
+              {
+                "Type": "TextButtonStyle",
+                "X": 45,
+                "Y": 3,
+                "TextId": "Scale_btn_txt",
+                "TextRotation": "0",
+                "Wildcard1": {
+                  "TextId": "SCALE_BTN_WC",
+                  "UseBuffer": true,
+                  "BufferSize": 10
+                },
+                "ColorReleased": {
+                  "Red": 255,
+                  "Green": 255,
+                  "Blue": 255
+                },
+                "ColorPressed": {
+                  "Red": 255,
+                  "Green": 255,
+                  "Blue": 255
+                }
+              },
               {
                 "Type": "BoxWithBorderButtonStyle",
                 "X": 2,
@@ -613,9 +664,14 @@
             "ButtonStyles": [
               {
                 "Type": "TextButtonStyle",
-                "Y": 6,
-                "TextId": "__SingleUse_CINE",
+                "Y": 46,
+                "TextId": "Timebase_btn_txt",
                 "TextRotation": "0",
+                "Wildcard1": {
+                  "TextId": "TIMEBASE_BTN_WC",
+                  "UseBuffer": true,
+                  "BufferSize": 10
+                },
                 "ColorReleased": {
                   "Red": 255,
                   "Green": 255,
@@ -650,6 +706,22 @@
                 }
               }
             ]
+          },
+          {
+            "Type": "TextArea",
+            "Name": "Timebase_txt",
+            "X": 56,
+            "Y": 296,
+            "Width": 88,
+            "Height": 24,
+            "TextId": "__SingleUse_M9OQ",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "AutoSize": true
           },
           {
             "Type": "FlexButton",
@@ -800,6 +872,39 @@
             "Action": {
               "Type": "ActionCustom",
               "FunctionName": "Toggle_ch_trig"
+            }
+          },
+          {
+            "InteractionName": "Ch_scale_btn_pressed",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "Ch_scale_btn"
+            },
+            "Action": {
+              "Type": "ActionCustom",
+              "FunctionName": "Edit_scale_val"
+            }
+          },
+          {
+            "InteractionName": "Ch_y_pos_btn_pressed",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "Ch_y_pos_btn"
+            },
+            "Action": {
+              "Type": "ActionCustom",
+              "FunctionName": "Edit_y_pos_val"
+            }
+          },
+          {
+            "InteractionName": "Timebase_btn_pressed",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "Timebase_btn"
+            },
+            "Action": {
+              "Type": "ActionCustom",
+              "FunctionName": "Edit_timebase_val"
             }
           }
         ],
@@ -1146,7 +1251,63 @@
             ]
           }
         ],
-        "Interactions": []
+        "Interactions": [
+          {
+            "InteractionName": "OK_btn_pressed",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "OK_btn"
+            },
+            "Action": {
+              "Type": "ActionCustom",
+              "FunctionName": "Value_OK"
+            }
+          },
+          {
+            "InteractionName": "Down_arrow_btn_pressed",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "Down_arrow_btn"
+            },
+            "Action": {
+              "Type": "ActionCustom",
+              "FunctionName": "Value_decrement"
+            }
+          },
+          {
+            "InteractionName": "Up_arrow_btn_pressed",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "Up_arrow_btn"
+            },
+            "Action": {
+              "Type": "ActionCustom",
+              "FunctionName": "Value_increment"
+            }
+          },
+          {
+            "InteractionName": "Right_arrow_btn_pressed",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "Right_arrow_btn"
+            },
+            "Action": {
+              "Type": "ActionCustom",
+              "FunctionName": "Value_x10"
+            }
+          },
+          {
+            "InteractionName": "Left_arrow_btn_pressed",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "Left_arrow_btn"
+            },
+            "Action": {
+              "Type": "ActionCustom",
+              "FunctionName": "Value_x10_division"
+            }
+          }
+        ]
       }
     ],
     "Name": "Oscyloskop_v1",

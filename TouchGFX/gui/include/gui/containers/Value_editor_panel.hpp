@@ -9,6 +9,12 @@ public:
     Value_editor_panel();
     virtual ~Value_editor_panel() {}
 
+    virtual void Value_OK();
+    virtual void Value_increment();
+    virtual void Value_decrement();
+    virtual void Value_x10();
+    virtual void Value_x10_division();
+
     virtual void initialize();
 protected:
 };

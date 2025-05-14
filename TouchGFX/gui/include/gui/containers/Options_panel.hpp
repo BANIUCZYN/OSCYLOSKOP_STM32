@@ -25,10 +25,14 @@ public:
         const uint16_t buffer_size,
         Channel_setting_type setting);
 
+    // Obsluga przeciskow
     virtual void Toggle_channel();
     virtual void Toggle_ch_visib();
     virtual void Toggle_ch_type();
     virtual void Toggle_ch_trig();
+    virtual void Edit_scale_val();
+    virtual void Edit_y_pos_val();
+    virtual void Edit_timebase_val();
 
     //virtual void flexButtonCallbackHandler(const touchgfx::AbstractButtonContainer& src);
 

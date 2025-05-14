@@ -4,10 +4,6 @@
 Options_panel::Options_panel()
 {
     CH_N_val = 0; //inicjalizacja wartoœci numeru kana³u
-
-    // Ch_visib_btn.setAction(flexButtonCallback);
-    // Ch_type_btn.setAction(flexButtonCallback);
-    // Ch_trig_btn.setAction(flexButtonCallback);
 }
 
 void Options_panel::initialize()
@@ -15,7 +11,9 @@ void Options_panel::initialize()
     Options_panelBase::initialize();
 }
 
-// ========== DODANE FUNKCYJE ==========
+// ========================= DODANE FUNKCYJE ===========================
+
+// ========= Obsluga przyciskow =========
 
 void Options_panel::Toggle_channel()
 {
@@ -24,39 +22,42 @@ void Options_panel::Toggle_channel()
     Channel_btn.invalidate();
 
     Update_all_disp_ch_settings();
-
-    // printf("%d\n", CHANNEL_BTN_SIZE);
 }
 
 void Options_panel::Toggle_ch_visib()
 {
     channels[CH_N_val].toggle_bin_setting(VISIB);
     Update_btn_text(&Ch_visib_btn, Ch_visib_btnBuffer, CH_VISIB_BTN_SIZE, VISIB);
-    //Ch_visib_btn.invalidate();
-
-    //const touchgfx::Unicode::UnicodeChar* TEXT = channels[CH_N_val].get_ch_visib_text(CH_VISIB_BTN_SIZE);
-    //Unicode::snprintf(Ch_visib_btnBuffer, CH_VISIB_BTN_SIZE, "%s", TEXT);
 }
 
 void Options_panel::Toggle_ch_type()
 {
     channels[CH_N_val].toggle_bin_setting(TYPE);
     Update_btn_text(&Ch_type_btn, Ch_type_btnBuffer, CH_TYPE_BTN_SIZE, TYPE);
-    //Ch_type_btn.invalidate();
-
-    //const touchgfx::Unicode::UnicodeChar* TEXT = channels[CH_N_val].get_ch_type_text(CH_TYPE_BTN_SIZE);
-    //Unicode::snprintf(Ch_type_btnBuffer, CH_TYPE_BTN_SIZE, "%s", TEXT);
 }
 
 void Options_panel::Toggle_ch_trig()
 {
     channels[CH_N_val].toggle_bin_setting(TRIG);
     Update_btn_text(&Ch_trig_btn, Ch_trig_btnBuffer, CH_TRIG_BTN_SIZE, TRIG);
-    //Ch_trig_btn.invalidate();
-
-    //const touchgfx::Unicode::UnicodeChar* TEXT = channels[CH_N_val].get_ch_trig_text(CH_TRIG_BTN_SIZE);
-    //Unicode::snprintf(Ch_trig_btnBuffer, CH_TRIG_BTN_SIZE, "%s", TEXT);
 }
+
+void Options_panel::Edit_scale_val()
+{
+    
+}
+
+void Options_panel::Edit_y_pos_val()
+{
+
+}
+
+void Options_panel::Edit_timebase_val()
+{
+
+}
+
+////////////////////////////////////////////////////////////////////////////////////
 
 void Options_panel::Update_all_disp_ch_settings()
 {
@@ -65,7 +66,6 @@ void Options_panel::Update_all_disp_ch_settings()
     Update_btn_text(&Ch_trig_btn, Ch_trig_btnBuffer, CH_TRIG_BTN_SIZE, TRIG);
 }
 
-// JESLI TO ZADZIALA TO ZUPDATEOWAÆ/USUNAÆ INNE FUNKCJE 
 void Options_panel::Update_btn_text(touchgfx::WildcardTextButtonStyle<touchgfx::BoxWithBorderButtonStyle<touchgfx::ClickButtonTrigger>>* btn_ptr,
     touchgfx::Unicode::UnicodeChar* buffer,
     const uint16_t BUFFER_SIZE,
