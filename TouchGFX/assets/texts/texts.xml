@@ -6,6 +6,9 @@
   <Texts>
     <TextGroup Id="Group1" />
     <TextGroup Id="Unsorted">
+      <Text Id="VAL_EDITOR_WC" Alignment="Left" TypographyId="Default">
+        <Translation Language="GB">-</Translation>
+      </Text>
       <Text Id="__SingleUse_M9OQ" Alignment="Left" TypographyId="Default">
         <Translation Language="GB">Timebase</Translation>
       </Text>
@@ -52,7 +55,7 @@
         <Translation Language="GB">OK</Translation>
       </Text>
       <Text Id="__SingleUse_ANKB" Alignment="Center" TypographyId="Large">
-        <Translation Language="GB">VAL</Translation>
+        <Translation Language="GB">&lt;VAL_EDITOR_WC&gt;</Translation>
       </Text>
       <Text Id="__SingleUse_SL1Z" Alignment="Center" TypographyId="Large">
         <Translation Language="GB">/10</Translation>

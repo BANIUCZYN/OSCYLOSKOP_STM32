@@ -12,7 +12,7 @@ class Value_editor_panel; // to jest po to aby mo¿na by³o stworzyæ vep_ptr (forw
 class Options_panel : public Options_panelBase
 {
 private:
-    Value_editor_panel* vep_ptr = nullptr;
+    Value_editor_panel* vep_ptr;
     uint8_t CH_N_val;
     Channel_settings channels[NUMBER_OF_CHANNELS] = { Channel_settings(), Channel_settings() };
 
@@ -37,7 +37,7 @@ public:
     virtual void Edit_y_pos_val();
     virtual void Edit_timebase_val();
 
-    void set_value_editor_panel(Value_editor_panel* vep) { vep_ptr = vep; }
+    void set_value_editor_panel_ptr(Value_editor_panel* vep) { vep_ptr = vep; }
 
 protected:
 };

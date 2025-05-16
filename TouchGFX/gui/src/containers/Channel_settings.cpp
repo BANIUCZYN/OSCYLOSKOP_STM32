@@ -21,6 +21,23 @@ void Channel_settings::toggle_bin_setting(Channel_setting_type setting)
 	case TRIG:
 		ch_trig_val = !ch_trig_val;
 		break;
+	default:
+		break;
+	}
+}
+
+void Channel_settings::set_num_val(uint16_t val, Channel_setting_type setting)
+{
+	switch (setting)
+	{
+	case SCALE:
+		ch_scale_val = val;
+		break;
+	case Y_POS:
+		ch_y_pos_val = val;
+		break;
+	default:
+		break;
 	}
 }
 

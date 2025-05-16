@@ -5,7 +5,9 @@
 enum Channel_setting_type {
 	VISIB,
 	TYPE,
-	TRIG
+	TRIG,
+	SCALE,
+	Y_POS
 };
 
 class Channel_settings
@@ -21,6 +23,7 @@ public:
 	Channel_settings();
 
 	void toggle_bin_setting(Channel_setting_type setting);
+	void set_num_val(uint16_t val, Channel_setting_type setting);
 
 	const char* get_ch_text(Channel_setting_type setting) const;
 

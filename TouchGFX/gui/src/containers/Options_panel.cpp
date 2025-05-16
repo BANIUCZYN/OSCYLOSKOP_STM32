@@ -1,10 +1,7 @@
 #include <gui/containers/Options_panel.hpp>
 // #include <stdio.h>
 
-Options_panel::Options_panel()
-{
-    CH_N_val = 0; //inicjalizacja wartoœci numeru kana³u
-}
+Options_panel::Options_panel() : vep_ptr(nullptr), CH_N_val(0) {}
 
 void Options_panel::initialize()
 {
@@ -44,15 +41,16 @@ void Options_panel::Toggle_ch_trig()
 
 void Options_panel::Edit_scale_val()
 {
-    /*
-    VEP.setVisible(true);
-    VEP.invalidate();
-    */
+    // To mo¿na w Screen1View aby tam by³o sterowanie widocznoœcia, ale zostawiam tak, bo mniej kodu
     if (vep_ptr)
     {
         vep_ptr->setVisible(true);
         vep_ptr->invalidate();
     }
+    
+    uint16_t val = channels[CH_N_val].get_ch_scale_val();
+    vep_ptr->set_edited_val(val, SCALE);
+    vep_ptr->update_edited_val_text();
 }
 
 void Options_panel::Edit_y_pos_val()

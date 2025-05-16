@@ -949,7 +949,7 @@
             "X": 240,
             "Y": 184,
             "Width": 51,
-            "Height": 34,
+            "Height": 36,
             "TextId": "__SingleUse_SL1Z",
             "TextRotation": "0",
             "Color": {
@@ -966,7 +966,7 @@
             "X": 510,
             "Y": 184,
             "Width": 51,
-            "Height": 34,
+            "Height": 36,
             "TextId": "__SingleUse_CFFG",
             "TextRotation": "0",
             "Color": {
@@ -983,7 +983,7 @@
             "X": 383,
             "Y": 84,
             "Width": 34,
-            "Height": 34,
+            "Height": 36,
             "TextId": "__SingleUse_2FC0",
             "TextRotation": "0",
             "Color": {
@@ -1000,7 +1000,7 @@
             "X": 383,
             "Y": 288,
             "Width": 34,
-            "Height": 34,
+            "Height": 36,
             "TextId": "__SingleUse_ACLC",
             "TextRotation": "0",
             "Color": {
@@ -1014,10 +1014,10 @@
           {
             "Type": "TextArea",
             "Name": "Val_text",
-            "X": 376,
+            "X": 392,
             "Y": 184,
-            "Width": 51,
-            "Height": 34,
+            "Width": 17,
+            "Height": 36,
             "TextId": "__SingleUse_ANKB",
             "TextRotation": "0",
             "Color": {
@@ -1025,7 +1025,12 @@
               "Green": 255,
               "Blue": 255
             },
-            "AutoSize": true
+            "AutoSize": true,
+            "Wildcard1": {
+              "TextId": "VAL_EDITOR_WC",
+              "UseBuffer": true,
+              "BufferSize": 10
+            }
           },
           {
             "Type": "FlexButton",
