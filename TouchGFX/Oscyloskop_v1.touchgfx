@@ -106,7 +106,7 @@
           },
           {
             "Type": "CustomContainerInstance",
-            "Name": "value_editor_panel1",
+            "Name": "VEP",
             "Width": 800,
             "Height": 480,
             "CustomContainerDefinitionName": "Value_editor_panel"

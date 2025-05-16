@@ -29,4 +29,7 @@ public:
 	bool get_ch_trig_val() const { return ch_trig_val; }
 	uint16_t get_ch_scale_val() const { return ch_scale_val; }
 	uint16_t get_ch_y_pos_val() const { return ch_y_pos_val; }
+
+	void set_ch_scale_val(uint16_t val) { ch_scale_val = val; }
+	void set_ch_y_pos_val(uint16_t val) { ch_y_pos_val = val; }
 };

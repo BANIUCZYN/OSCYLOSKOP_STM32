@@ -44,7 +44,15 @@ void Options_panel::Toggle_ch_trig()
 
 void Options_panel::Edit_scale_val()
 {
-    
+    /*
+    VEP.setVisible(true);
+    VEP.invalidate();
+    */
+    if (vep_ptr)
+    {
+        vep_ptr->setVisible(true);
+        vep_ptr->invalidate();
+    }
 }
 
 void Options_panel::Edit_y_pos_val()
