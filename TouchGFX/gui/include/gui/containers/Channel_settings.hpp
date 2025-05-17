@@ -25,8 +25,10 @@ public:
 	void toggle_bin_setting(Channel_setting_type setting);
 	void set_num_val(uint16_t val, Channel_setting_type setting);
 
-	const char* get_ch_text(Channel_setting_type setting) const;
+	const char* get_ch_bin_text(Channel_setting_type setting) const;
+	uint16_t get_ch_num_val(Channel_setting_type setting) const;
 
+	/*
 	bool get_ch_visib_val() const { return ch_visib_val; }
 	bool get_ch_type_val() const { return ch_type_val; }
 	bool get_ch_trig_val() const { return ch_trig_val; }
@@ -35,4 +37,5 @@ public:
 
 	void set_ch_scale_val(uint16_t val) { ch_scale_val = val; }
 	void set_ch_y_pos_val(uint16_t val) { ch_y_pos_val = val; }
+	*/
 };

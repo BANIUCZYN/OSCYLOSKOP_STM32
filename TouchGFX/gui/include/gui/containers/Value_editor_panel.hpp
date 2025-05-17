@@ -29,7 +29,7 @@ public:
 
     virtual void initialize();
 
-    void set_option_panel_ptr(Options_panel* op) { op_ptr = op; }
+    void set_OP_ptr(Options_panel* op) { op_ptr = op; }
 protected:
 };
 

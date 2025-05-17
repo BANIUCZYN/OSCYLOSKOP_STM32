@@ -1,4 +1,5 @@
 #include <gui/containers/Value_editor_panel.hpp>
+#include <gui/containers/Options_panel.hpp> // To musi byc bo w Value_editor_panel.hpp jest tylko forward declaration bez podpietego pliku zrodlowego
 
 Value_editor_panel::Value_editor_panel() : op_ptr(nullptr), edited_val(0)
 {
@@ -17,7 +18,7 @@ void Value_editor_panel::initialize()
 
 void Value_editor_panel::Value_OK()
 {
-    //set_num_val(edited_val, current_setting); // zastanowiæ siê czy tu dawaæ wartoœæ od razu do Channel_settings, czy przez Options_panel
+    op_ptr->Update_num_val(edited_val, current_setting);
 
     this->setVisible(false);
     this->invalidate();

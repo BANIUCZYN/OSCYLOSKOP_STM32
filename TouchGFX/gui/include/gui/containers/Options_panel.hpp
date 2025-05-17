@@ -23,10 +23,9 @@ public:
     virtual void initialize();
 
     void Update_all_disp_ch_settings();
-    void Update_btn_text(touchgfx::WildcardTextButtonStyle<touchgfx::BoxWithBorderButtonStyle<touchgfx::ClickButtonTrigger>>* btn,
-        touchgfx::Unicode::UnicodeChar* buffer,
-        const uint16_t buffer_size,
-        Channel_setting_type setting);
+    void Update_btn_text(Channel_setting_type setting);
+
+    void Update_num_val(uint16_t val, Channel_setting_type setting);
 
     // Obsluga przeciskow
     virtual void Toggle_channel();
@@ -37,7 +36,7 @@ public:
     virtual void Edit_y_pos_val();
     virtual void Edit_timebase_val();
 
-    void set_value_editor_panel_ptr(Value_editor_panel* vep) { vep_ptr = vep; }
+    void set_VEP_ptr(Value_editor_panel* vep) { vep_ptr = vep; }
 
 protected:
 };
