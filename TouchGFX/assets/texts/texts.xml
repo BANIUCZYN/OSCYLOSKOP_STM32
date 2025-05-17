@@ -13,16 +13,16 @@
         <Translation Language="GB">Timebase</Translation>
       </Text>
       <Text Id="TIMEBASE_BTN_WC" Alignment="Left" TypographyId="Default">
-        <Translation Language="GB"></Translation>
+        <Translation Language="GB">1000</Translation>
       </Text>
       <Text Id="Y_POS_BTN_WC" Alignment="Left" TypographyId="Default">
-        <Translation Language="GB"></Translation>
+        <Translation Language="GB">0</Translation>
       </Text>
       <Text Id="Y_pos_btn_txt" Alignment="Center" TypographyId="Default">
         <Translation Language="GB">&lt;Y_POS_BTN_WC&gt;V</Translation>
       </Text>
       <Text Id="SCALE_BTN_WC" Alignment="Left" TypographyId="Default">
-        <Translation Language="GB"></Translation>
+        <Translation Language="GB">1</Translation>
       </Text>
       <Text Id="Scale_btn_txt" Alignment="Center" TypographyId="Default">
         <Translation Language="GB">&lt;SCALE_BTN_WC&gt;V/div</Translation>
@@ -91,7 +91,7 @@
         <Translation Language="GB">FFT</Translation>
       </Text>
       <Text Id="Timebase_btn_txt" Alignment="Center" TypographyId="Default">
-        <Translation Language="GB">&lt;TIMEBASE_BTN_WC&gt;s/div</Translation>
+        <Translation Language="GB">&lt;TIMEBASE_BTN_WC&gt;ns/div</Translation>
       </Text>
       <Text Id="__SingleUse_6X5U" Alignment="Left" TypographyId="Default">
         <Translation Language="GB">Aquisition</Translation>

@@ -4,6 +4,7 @@
 #include <gui_generated/containers/Options_panelBase.hpp>
 #include <gui/containers/Channel_settings.hpp>
 #include <gui/containers/Value_editor_panel.hpp>
+#include <gui/containers/Setting_types.hpp>
 
 class Value_editor_panel; // to jest po to aby mo¿na by³o stworzyæ vep_ptr (forward declaration)
 
@@ -13,8 +14,11 @@ class Options_panel : public Options_panelBase
 {
 private:
     Value_editor_panel* vep_ptr;
+
     uint8_t CH_N_val;
-    Channel_settings channels[NUMBER_OF_CHANNELS] = { Channel_settings(), Channel_settings() };
+    uint16_t timebase_val; // To musi byæ tu, a nie jako atrybut Channel_settings bo nie zale¿y od kana³u
+
+    Channel_settings channels[NUMBER_OF_CHANNELS];
 
 public:
     Options_panel();
@@ -23,9 +27,9 @@ public:
     virtual void initialize();
 
     void Update_all_disp_ch_settings();
-    void Update_btn_text(Channel_setting_type setting);
+    void Update_btn_text(Setting_type setting);
 
-    void Update_num_val(uint16_t val, Channel_setting_type setting);
+    void Update_num_val(uint16_t val, Setting_type setting);
 
     // Obsluga przeciskow
     virtual void Toggle_channel();

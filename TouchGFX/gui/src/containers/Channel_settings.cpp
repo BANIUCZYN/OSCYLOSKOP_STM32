@@ -4,21 +4,21 @@ Channel_settings::Channel_settings()
 	: ch_visib_val(false),
 	ch_type_val(false),
 	ch_trig_val(false),
-	ch_scale_val(1),
-	ch_y_pos_val(1)
+	ch_scale_val(1), // zakres na ekranie -5V do 5V
+	ch_y_pos_val(0)  // 0V przesuniêcia wzglêdem osi x (0V)
 {}
 
-void Channel_settings::toggle_bin_setting(Channel_setting_type setting)
+void Channel_settings::toggle_bin_setting(Setting_type setting)
 {
 	switch (setting)
 	{
-	case VISIB:
+	case CH_VISIB:
 		ch_visib_val = !ch_visib_val;
 		break;
-	case TYPE:
+	case CH_TYPE:
 		ch_type_val = !ch_type_val;
 		break;
-	case TRIG:
+	case CH_TRIG:
 		ch_trig_val = !ch_trig_val;
 		break;
 	default:
@@ -26,14 +26,14 @@ void Channel_settings::toggle_bin_setting(Channel_setting_type setting)
 	}
 }
 
-void Channel_settings::set_num_val(uint16_t val, Channel_setting_type setting)
+void Channel_settings::set_num_val(uint16_t val, Setting_type setting)
 {
 	switch (setting)
 	{
-	case SCALE:
+	case CH_SCALE:
 		ch_scale_val = val;
 		break;
-	case Y_POS:
+	case CH_Y_POS:
 		ch_y_pos_val = val;
 		break;
 	default:
@@ -41,28 +41,28 @@ void Channel_settings::set_num_val(uint16_t val, Channel_setting_type setting)
 	}
 }
 
-const char* Channel_settings::get_ch_bin_text(Channel_setting_type setting) const
+const char* Channel_settings::get_ch_bin_text(Setting_type setting) const
 {
 	switch (setting)
 	{
-	case VISIB:
+	case CH_VISIB:
 		return ch_visib_val ? "ON" : "OFF";
-	case TYPE:
+	case CH_TYPE:
 		return ch_type_val ? "AC" : "DC";
-	case TRIG:
+	case CH_TRIG:
 		return ch_trig_val ? "MANUAL" : "AUTO";
 	default:
 		return "ERR";
 	}
 }
 
-uint16_t Channel_settings::get_ch_num_val(Channel_setting_type setting) const
+uint16_t Channel_settings::get_ch_num_val(Setting_type setting) const
 {
 	switch (setting)
 	{
-	case SCALE:
+	case CH_SCALE:
 		return ch_scale_val;
-	case Y_POS:
+	case CH_Y_POS:
 		return ch_y_pos_val;
 	default:
 		return 0;

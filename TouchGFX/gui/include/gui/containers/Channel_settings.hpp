@@ -1,14 +1,7 @@
 #pragma once
 
 #include <stdint.h>
-
-enum Channel_setting_type {
-	VISIB,
-	TYPE,
-	TRIG,
-	SCALE,
-	Y_POS
-};
+#include <gui/containers/Setting_types.hpp>
 
 class Channel_settings
 {
@@ -22,11 +15,11 @@ private:
 public:
 	Channel_settings();
 
-	void toggle_bin_setting(Channel_setting_type setting);
-	void set_num_val(uint16_t val, Channel_setting_type setting);
+	void toggle_bin_setting(Setting_type setting);
+	void set_num_val(uint16_t val, Setting_type setting);
 
-	const char* get_ch_bin_text(Channel_setting_type setting) const;
-	uint16_t get_ch_num_val(Channel_setting_type setting) const;
+	const char* get_ch_bin_text(Setting_type setting) const;
+	uint16_t get_ch_num_val(Setting_type setting) const;
 
 	/*
 	bool get_ch_visib_val() const { return ch_visib_val; }
