@@ -4,7 +4,9 @@
 #include <gui_generated/containers/Value_editor_panelBase.hpp>
 #include <gui/containers/Setting_types.hpp>
 
-class Options_panel; // to jest po to aby mo¿na by³o stworzyæ op_ptr (forward declaration)
+// #define NUMBER_OF_EDITABLE_VALS 3
+
+class Options_panel; // to jest po to aby mo¿na by³o stworzyx op_ptr (forward declaration)
 
 class Value_editor_panel : public Value_editor_panelBase
 {
@@ -12,7 +14,15 @@ private:
     Options_panel* op_ptr;
 
     uint16_t edited_val;
+    uint16_t edited_val_MAX[SIZE_OF_Setting_type];
+    uint16_t edited_val_MIN[SIZE_OF_Setting_type];
+    uint16_t digit[SIZE_OF_Setting_type]; // zrobiæ mapping na switchu bo to oszczedza 6 bajtow RAM (ale za to zabiera 36 bajtow FLASH)
+
     Setting_type current_setting;
+
+    // STWORZY (MOZE W SETTING_TYPES) LISTE ENUM Z WARTOŒCIAMI GRANICZNYMI DLA WARTOŒCI CH_SCALE, CH_Y_POS, TIMEBASE
+
+    void digit_init();
 
 public:
     Value_editor_panel();
@@ -24,7 +34,9 @@ public:
     virtual void Value_x10();
     virtual void Value_x10_division();
 
-    void set_edited_val(uint16_t val, Setting_type setting) { edited_val = val; current_setting = setting; }
+    void set_edited_val(Setting_type setting, uint16_t val);
+    void set_edited_val_limits(Setting_type setting, uint16_t max, int32_t min);
+    // void edit_val(Setting_type setting); // no tq funkcje niby mozna ale niewiele poprawia a rozbudowywuje kod
 
     void update_edited_val_text();
 

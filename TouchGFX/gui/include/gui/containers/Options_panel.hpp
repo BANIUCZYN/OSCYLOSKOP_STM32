@@ -15,6 +15,7 @@ class Options_panel : public Options_panelBase
 private:
     Value_editor_panel* vep_ptr;
 
+    bool aquisition_status;
     uint8_t CH_N_val;
     uint16_t timebase_val; // To musi byæ tu, a nie jako atrybut Channel_settings bo nie zale¿y od kana³u
 
@@ -29,9 +30,10 @@ public:
     void Update_all_disp_ch_settings();
     void Update_btn_text(Setting_type setting);
 
-    void Update_num_val(uint16_t val, Setting_type setting);
+    void Update_num_val(Setting_type setting, uint16_t val);
 
     // Obsluga przeciskow
+    virtual void Toggle_aquisition();
     virtual void Toggle_channel();
     virtual void Toggle_ch_visib();
     virtual void Toggle_ch_type();

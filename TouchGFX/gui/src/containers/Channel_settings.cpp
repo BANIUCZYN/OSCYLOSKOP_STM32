@@ -26,7 +26,7 @@ void Channel_settings::toggle_bin_setting(Setting_type setting)
 	}
 }
 
-void Channel_settings::set_num_val(uint16_t val, Setting_type setting)
+void Channel_settings::set_num_val(Setting_type setting, uint16_t val)
 {
 	switch (setting)
 	{

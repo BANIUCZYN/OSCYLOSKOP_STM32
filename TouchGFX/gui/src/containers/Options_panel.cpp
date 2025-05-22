@@ -3,6 +3,7 @@
 
 Options_panel::Options_panel() :
     vep_ptr(nullptr),
+    aquisition_status(false),
     CH_N_val(0),
     timebase_val(1000), // 1000ns = 1us na podzia³kê, czyli 10us na ekran
     channels({ Channel_settings(), Channel_settings() })
@@ -16,6 +17,11 @@ void Options_panel::initialize()
 // ========================= DODANE FUNKCYJE ===========================
 
 // ========= Obsluga przyciskow =========
+
+void Options_panel::Toggle_aquisition()
+{
+    aquisition_status = !aquisition_status;
+}
 
 void Options_panel::Toggle_channel()
 {
@@ -53,8 +59,7 @@ void Options_panel::Edit_scale_val()
     }
     
     uint16_t val = channels[CH_N_val].get_ch_num_val(CH_SCALE);
-    vep_ptr->set_edited_val(val, CH_SCALE);
-    vep_ptr->update_edited_val_text();
+    vep_ptr->set_edited_val(CH_SCALE, val);
 }
 
 void Options_panel::Edit_y_pos_val()
@@ -66,8 +71,7 @@ void Options_panel::Edit_y_pos_val()
     }
 
     uint16_t val = channels[CH_N_val].get_ch_num_val(CH_Y_POS);
-    vep_ptr->set_edited_val(val, CH_Y_POS);
-    vep_ptr->update_edited_val_text();
+    vep_ptr->set_edited_val(CH_Y_POS, val);
 }
 
 void Options_panel::Edit_timebase_val()
@@ -78,9 +82,7 @@ void Options_panel::Edit_timebase_val()
         vep_ptr->invalidate();
     }
     
-    uint16_t val = timebase_val;
-    vep_ptr->set_edited_val(val, TIMEBASE);
-    vep_ptr->update_edited_val_text();
+    vep_ptr->set_edited_val(TIMEBASE, timebase_val);
 }
 
 ////////////////////////////////////////////////////////////////////////////////////
@@ -122,10 +124,12 @@ void Options_panel::Update_btn_text(Setting_type setting)
         Unicode::snprintf(Timebase_btnBuffer, TIMEBASE_BTN_SIZE, "%d", timebase_val);
         Timebase_btn.invalidate();
         break;
+    default:
+        break;
     }
 }
 
-void Options_panel::Update_num_val(uint16_t val, Setting_type setting)
+void Options_panel::Update_num_val(Setting_type setting, uint16_t val)
 {
     switch (setting)
     {
@@ -133,7 +137,7 @@ void Options_panel::Update_num_val(uint16_t val, Setting_type setting)
         timebase_val = val;
         break;
     default:
-        channels[CH_N_val].set_num_val(val, setting);
+        channels[CH_N_val].set_num_val(setting, val);
         break;
     }
 

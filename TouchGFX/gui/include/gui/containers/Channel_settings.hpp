@@ -16,7 +16,7 @@ public:
 	Channel_settings();
 
 	void toggle_bin_setting(Setting_type setting);
-	void set_num_val(uint16_t val, Setting_type setting);
+	void set_num_val(Setting_type setting, uint16_t val);
 
 	const char* get_ch_bin_text(Setting_type setting) const;
 	uint16_t get_ch_num_val(Setting_type setting) const;
