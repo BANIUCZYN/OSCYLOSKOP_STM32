@@ -20,9 +20,8 @@ private:
 
     Setting_type current_setting;
 
-    // STWORZY (MOZE W SETTING_TYPES) LISTE ENUM Z WARTOŒCIAMI GRANICZNYMI DLA WARTOŒCI CH_SCALE, CH_Y_POS, TIMEBASE
-
     void digit_init();
+    bool check_val_legality(char operation);
 
 public:
     Value_editor_panel();
@@ -36,7 +35,8 @@ public:
 
     void set_edited_val(Setting_type setting, uint16_t val);
     void set_edited_val_limits(Setting_type setting, uint16_t max, int32_t min);
-    // void edit_val(Setting_type setting); // no tq funkcje niby mozna ale niewiele poprawia a rozbudowywuje kod
+    // void edit_val(Setting_type setting); // po analizie stwierdzam ze lepiej tego nie robic bo
+    // nie koniecznie uprosci dzialanie a komplikuje kod i wsumie moga byc problemy z funkcjonalnoscia
 
     void update_edited_val_text();
 

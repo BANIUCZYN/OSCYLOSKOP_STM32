@@ -38,24 +38,28 @@ void Value_editor_panel::Value_OK()
 
 void Value_editor_panel::Value_increment()
 {
-    // bool perm = check_val_legality('+');
-    // if (perm)
-    // {
+    bool perm = check_val_legality('+');
+    if (perm)
+    {
         edited_val += digit[current_setting];
         update_edited_val_text();
-    // }
+    }
 }
 
 void Value_editor_panel::Value_decrement()
 {
-    edited_val -= digit[current_setting];
-
-    update_edited_val_text();
+    bool perm = check_val_legality('-');
+    if (perm)
+    {
+        edited_val -= digit[current_setting];
+        update_edited_val_text();
+    }
 }
 
 void Value_editor_panel::Value_x10()
 {
-    if (edited_val != 0)
+    bool perm = check_val_legality('*');
+    if (perm && edited_val != 0)
     {
         edited_val *= 10;
         digit[current_setting] *= 10;
@@ -66,7 +70,8 @@ void Value_editor_panel::Value_x10()
 
 void Value_editor_panel::Value_x10_division()
 {
-    if (edited_val >= 10)
+    bool perm = check_val_legality('/');
+    if (perm && edited_val >= 10)
     {
         edited_val /= 10;
         digit[current_setting] /= 10;
@@ -109,4 +114,29 @@ void Value_editor_panel::digit_init()
         dig *= 10;
     }
     digit[current_setting] = dig;
+}
+
+bool Value_editor_panel::check_val_legality(char operation)
+{
+    int64_t val_copy = static_cast<int64_t>(edited_val);
+    int64_t digit_copy = static_cast<int64_t>(digit[current_setting]);
+    int64_t outcome;
+
+    switch (operation)
+    {
+    case '+':
+        outcome = val_copy + digit_copy;
+        return outcome <= edited_val_MAX[current_setting];
+    case '-':
+        outcome = val_copy - digit_copy;
+        return outcome >= edited_val_MIN[current_setting];
+    case '*':
+        outcome = val_copy * 10;
+        return outcome <= edited_val_MAX[current_setting];
+    case '/':
+        outcome = val_copy / 10;
+        return outcome >= edited_val_MIN[current_setting];
+    default:
+        return 0;
+    }
 }
