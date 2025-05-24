@@ -17,7 +17,7 @@ private:
 
     bool aquisition_status;
     uint8_t CH_N_val;
-    uint16_t timebase_val; // To musi byæ tu, a nie jako atrybut Channel_settings bo nie zale¿y od kana³u
+    int16_t timebase_val; // To musi byæ tu, a nie jako atrybut Channel_settings bo nie zale¿y od kana³u
 
     Channel_settings channels[NUMBER_OF_CHANNELS];
 
@@ -30,7 +30,9 @@ public:
     void Update_all_disp_ch_settings();
     void Update_btn_text(Setting_type setting);
 
-    void Update_num_val(Setting_type setting, uint16_t val);
+    void Update_num_val(Setting_type setting, int16_t val);
+
+    int16_t get_curr_ch_num_val(Setting_type setting) const { return channels[CH_N_val].get_ch_num_val(setting); } // channels[CH_N_val].get_ch_num_val(setting)
 
     // Obsluga przeciskow
     virtual void Toggle_aquisition();
@@ -38,9 +40,10 @@ public:
     virtual void Toggle_ch_visib();
     virtual void Toggle_ch_type();
     virtual void Toggle_ch_trig();
-    virtual void Edit_scale_val();
-    virtual void Edit_y_pos_val();
-    virtual void Edit_timebase_val();
+    virtual void Edit_scale_val() { Edit_val_in_VEP(CH_SCALE); }
+    virtual void Edit_y_pos_val() { Edit_val_in_VEP(CH_Y_POS); }
+    virtual void Edit_timebase_val() { Edit_val_in_VEP(TIMEBASE); }
+    void Edit_val_in_VEP(Setting_type setting);
 
     void set_VEP_ptr(Value_editor_panel* vep) { vep_ptr = vep; }
 

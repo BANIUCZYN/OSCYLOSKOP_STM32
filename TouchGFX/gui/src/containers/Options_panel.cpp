@@ -50,19 +50,7 @@ void Options_panel::Toggle_ch_trig()
     Update_btn_text(CH_TRIG);
 }
 
-void Options_panel::Edit_scale_val()
-{
-    if (vep_ptr)
-    {
-        vep_ptr->setVisible(true);
-        vep_ptr->invalidate();
-    }
-    
-    uint16_t val = channels[CH_N_val].get_ch_num_val(CH_SCALE);
-    vep_ptr->set_edited_val(CH_SCALE, val);
-}
-
-void Options_panel::Edit_y_pos_val()
+void Options_panel::Edit_val_in_VEP(Setting_type setting)
 {
     if (vep_ptr)
     {
@@ -70,19 +58,20 @@ void Options_panel::Edit_y_pos_val()
         vep_ptr->invalidate();
     }
 
-    uint16_t val = channels[CH_N_val].get_ch_num_val(CH_Y_POS);
-    vep_ptr->set_edited_val(CH_Y_POS, val);
-}
-
-void Options_panel::Edit_timebase_val()
-{
-    if (vep_ptr)
+    switch (setting)
     {
-        vep_ptr->setVisible(true);
-        vep_ptr->invalidate();
+    case CH_SCALE:
+        vep_ptr->set_edited_val(CH_SCALE, channels[CH_N_val].get_ch_num_val(CH_SCALE));
+        break;
+    case CH_Y_POS:
+        vep_ptr->set_edited_val(CH_Y_POS, channels[CH_N_val].get_ch_num_val(CH_Y_POS));
+        break;
+    case TIMEBASE:
+        vep_ptr->set_edited_val(TIMEBASE, timebase_val);
+        break;
+    default:
+        break;
     }
-    
-    vep_ptr->set_edited_val(TIMEBASE, timebase_val);
 }
 
 ////////////////////////////////////////////////////////////////////////////////////
@@ -129,7 +118,7 @@ void Options_panel::Update_btn_text(Setting_type setting)
     }
 }
 
-void Options_panel::Update_num_val(Setting_type setting, uint16_t val)
+void Options_panel::Update_num_val(Setting_type setting, int16_t val)
 {
     switch (setting)
     {

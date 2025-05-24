@@ -4,8 +4,6 @@
 #include <gui_generated/containers/Value_editor_panelBase.hpp>
 #include <gui/containers/Setting_types.hpp>
 
-// #define NUMBER_OF_EDITABLE_VALS 3
-
 class Options_panel; // to jest po to aby mo¿na by³o stworzyx op_ptr (forward declaration)
 
 class Value_editor_panel : public Value_editor_panelBase
@@ -13,28 +11,31 @@ class Value_editor_panel : public Value_editor_panelBase
 private:
     Options_panel* op_ptr;
 
-    uint16_t edited_val;
-    uint16_t edited_val_MAX[SIZE_OF_Setting_type];
-    uint16_t edited_val_MIN[SIZE_OF_Setting_type];
-    uint16_t digit[SIZE_OF_Setting_type]; // zrobiæ mapping na switchu bo to oszczedza 6 bajtow RAM (ale za to zabiera 36 bajtow FLASH)
+    int16_t edited_val;
+    int16_t edited_val_MAX[SIZE_OF_Setting_type];
+    int16_t edited_val_MIN[SIZE_OF_Setting_type];
+    int16_t digit[SIZE_OF_Setting_type]; // zrobiæ mapping na switchu bo to oszczedza 6 bajtow RAM (ale za to zabiera 36 bajtow FLASH)
 
     Setting_type current_setting;
 
-    void digit_init();
+    int16_t get_digit(int16_t val);
     bool check_val_legality(char operation);
+    void update_dependent_limits();
+
+    void edit_edited_val(char operation);
 
 public:
     Value_editor_panel();
     virtual ~Value_editor_panel() {}
 
     virtual void Value_OK();
-    virtual void Value_increment();
-    virtual void Value_decrement();
-    virtual void Value_x10();
-    virtual void Value_x10_division();
+    virtual void Value_increment() { edit_edited_val('+'); }
+    virtual void Value_decrement() { edit_edited_val('-'); }
+    virtual void Value_x10() { edit_edited_val('*'); }
+    virtual void Value_x10_division() { edit_edited_val('/'); }
 
-    void set_edited_val(Setting_type setting, uint16_t val);
-    void set_edited_val_limits(Setting_type setting, uint16_t max, int32_t min);
+    void set_edited_val(Setting_type setting, int16_t val);
+    void set_edited_val_limits(Setting_type setting, int16_t max, int16_t min);
     // void edit_val(Setting_type setting); // po analizie stwierdzam ze lepiej tego nie robic bo
     // nie koniecznie uprosci dzialanie a komplikuje kod i wsumie moga byc problemy z funkcjonalnoscia
 

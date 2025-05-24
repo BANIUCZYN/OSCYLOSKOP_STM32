@@ -1,5 +1,6 @@
 #include <gui/containers/Value_editor_panel.hpp>
 #include <gui/containers/Options_panel.hpp> // To musi byc bo w Value_editor_panel.hpp jest tylko forward declaration bez podpietego pliku zrodlowego
+#include <stdlib.h>
 
 Value_editor_panel::Value_editor_panel() : op_ptr(nullptr), edited_val(0)
 {
@@ -13,8 +14,8 @@ Value_editor_panel::Value_editor_panel() : op_ptr(nullptr), edited_val(0)
         edited_val_MIN[i] = 0;
     }
 
-    set_edited_val_limits(CH_SCALE, CH_SCALE_MAX, CH_SCALE_MIN);
-    set_edited_val_limits(TIMEBASE, TIMEBASE_MAX, TIMEBASE_MIN);
+    set_edited_val_limits( CH_SCALE, CH_SCALE_MAX, CH_SCALE_MIN );
+    set_edited_val_limits( TIMEBASE, TIMEBASE_MAX, TIMEBASE_MIN );
 }
 
 void Value_editor_panel::initialize()
@@ -30,72 +31,64 @@ void Value_editor_panel::Value_OK()
 {
     op_ptr->Update_num_val(current_setting, edited_val);
 
-    if (current_setting == CH_SCALE) { set_edited_val_limits(CH_Y_POS, 5 * edited_val, ~(5 * (static_cast<int32_t>(edited_val))) + 1); }
-
     this->setVisible(false);
     this->invalidate();
 }
 
-void Value_editor_panel::Value_increment()
+void Value_editor_panel::edit_edited_val(char operation)
 {
-    bool perm = check_val_legality('+');
-    if (perm)
+    if (!check_val_legality(operation)) { return; }
+
+    switch (operation)
     {
+    case '+':
         edited_val += digit[current_setting];
-        update_edited_val_text();
-    }
-}
-
-void Value_editor_panel::Value_decrement()
-{
-    bool perm = check_val_legality('-');
-    if (perm)
-    {
+        break;
+    case '-':
         edited_val -= digit[current_setting];
-        update_edited_val_text();
-    }
-}
-
-void Value_editor_panel::Value_x10()
-{
-    bool perm = check_val_legality('*');
-    if (perm && edited_val != 0)
-    {
+        break;
+    case '*':
         edited_val *= 10;
         digit[current_setting] *= 10;
-
-        update_edited_val_text();
-    }
-}
-
-void Value_editor_panel::Value_x10_division()
-{
-    bool perm = check_val_legality('/');
-    if (perm && edited_val >= 10)
-    {
+        break;
+    case '/':
         edited_val /= 10;
         digit[current_setting] /= 10;
-
-        update_edited_val_text();
+        break;
     }
+
+    update_edited_val_text();
 }
 
 // =========== Inne funkcyje ============
 
-void Value_editor_panel::set_edited_val(Setting_type setting, uint16_t val)
+void Value_editor_panel::set_edited_val(Setting_type setting, int16_t val)
 {
     current_setting = setting; 
-    
     edited_val = val;
+    
     update_edited_val_text();
+    update_dependent_limits();
 
-    if (digit[current_setting] == 0) { digit_init(); }
+    if (digit[current_setting] == 0) { digit[current_setting] = get_digit(edited_val); }
 }
 
-void Value_editor_panel::set_edited_val_limits(Setting_type setting, uint16_t max, int32_t min)
+void Value_editor_panel::set_edited_val_limits(Setting_type setting, int16_t max, int16_t min)
 {
     edited_val_MAX[setting] = max;
     edited_val_MIN[setting] = min;
+}
+
+void Value_editor_panel::update_dependent_limits()
+{
+    switch (current_setting)
+    {
+    case CH_Y_POS:
+        set_edited_val_limits(CH_Y_POS, 5 * op_ptr->get_curr_ch_num_val(CH_SCALE), ~(5 * op_ptr->get_curr_ch_num_val(CH_SCALE)) + 1);
+        break;
+    default:
+        break;
+    }
 }
 
 void Value_editor_panel::update_edited_val_text()
@@ -104,38 +97,49 @@ void Value_editor_panel::update_edited_val_text()
     Val_text.invalidate();
 }
 
-void Value_editor_panel::digit_init()
+int16_t Value_editor_panel::get_digit(int16_t val)
 {
-    uint16_t val = edited_val;
-    uint16_t dig = 1;
-    while (val >= 10)
+    int16_t pos_val = abs(val);
+    int16_t dig = 1;
+    while (pos_val >= 10)
     {
-        val /= 10;
+        pos_val /= 10;
         dig *= 10;
     }
-    digit[current_setting] = dig;
+    return dig;
 }
 
 bool Value_editor_panel::check_val_legality(char operation)
 {
-    int64_t val_copy = static_cast<int64_t>(edited_val);
-    int64_t digit_copy = static_cast<int64_t>(digit[current_setting]);
-    int64_t outcome;
+    int32_t val_copy = static_cast<int32_t>(edited_val);
+    int32_t digit_copy = static_cast<int32_t>(digit[current_setting]);
+    int32_t outcome;
+    int32_t outcome_digit;
 
     switch (operation)
     {
     case '+':
         outcome = val_copy + digit_copy;
-        return outcome <= edited_val_MAX[current_setting];
+        outcome_digit = get_digit(static_cast<int32_t>(outcome));
+        return outcome <= edited_val_MAX[current_setting] && outcome_digit == digit_copy;
     case '-':
         outcome = val_copy - digit_copy;
-        return outcome >= edited_val_MIN[current_setting];
+        outcome_digit = get_digit(static_cast<int32_t>(outcome));
+        return outcome >= edited_val_MIN[current_setting] && outcome_digit == digit_copy;
     case '*':
-        outcome = val_copy * 10;
-        return outcome <= edited_val_MAX[current_setting];
+        if (val_copy != 0)
+        {
+            outcome = val_copy * 10;
+            return outcome <= edited_val_MAX[current_setting] && outcome >= edited_val_MIN[current_setting];
+        }
+        else { return 0; }
     case '/':
-        outcome = val_copy / 10;
-        return outcome >= edited_val_MIN[current_setting];
+        if (val_copy >= 10 || val_copy <= -10)
+        {
+            outcome = val_copy / 10;
+            return outcome >= edited_val_MIN[current_setting]; // tu chyba nie trza outcome <= edited_val_MAX[current_setting]
+        }
+        else { return 0; }
     default:
         return 0;
     }

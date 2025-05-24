@@ -26,7 +26,7 @@ void Channel_settings::toggle_bin_setting(Setting_type setting)
 	}
 }
 
-void Channel_settings::set_num_val(Setting_type setting, uint16_t val)
+void Channel_settings::set_num_val(Setting_type setting, int16_t val)
 {
 	switch (setting)
 	{
@@ -56,7 +56,7 @@ const char* Channel_settings::get_ch_bin_text(Setting_type setting) const
 	}
 }
 
-uint16_t Channel_settings::get_ch_num_val(Setting_type setting) const
+int16_t Channel_settings::get_ch_num_val(Setting_type setting) const
 {
 	switch (setting)
 	{
