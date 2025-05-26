@@ -6,11 +6,16 @@
 
 class Screen1View : public Screen1ViewBase
 {
+private:
+    uint32_t tick_counter;
 public:
     Screen1View();
     virtual ~Screen1View() {}
     virtual void setupScreen();
     virtual void tearDownScreen();
+
+    void handleTickEvent();
+
 protected:
 };
 

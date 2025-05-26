@@ -94,7 +94,7 @@
         <Translation Language="GB">&lt;TIMEBASE_BTN_WC&gt;ns/div</Translation>
       </Text>
       <Text Id="__SingleUse_6X5U" Alignment="Left" TypographyId="Default">
-        <Translation Language="GB">Aquisition</Translation>
+        <Translation Language="GB">Acquisition</Translation>
       </Text>
     </TextGroup>
   </Texts>

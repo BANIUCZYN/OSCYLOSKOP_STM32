@@ -33,6 +33,8 @@ void Value_editor_panel::Value_OK()
 
     this->setVisible(false);
     this->invalidate();
+
+    set_other_panels_touchability(true);
 }
 
 void Value_editor_panel::edit_edited_val(char operation)
@@ -64,6 +66,8 @@ void Value_editor_panel::edit_edited_val(char operation)
 
 void Value_editor_panel::set_edited_val(Setting_type setting, int16_t val)
 {
+    set_other_panels_touchability(false);
+
     current_setting = setting; 
     edited_val = val;
     
@@ -143,4 +147,10 @@ bool Value_editor_panel::check_val_legality(char operation)
     default:
         return 0;
     }
+}
+
+void Value_editor_panel::set_other_panels_touchability(bool val)
+{
+    op_ptr->set_buttons_touchability(val);
+    // miejsce na przyszle panele
 }

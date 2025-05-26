@@ -3,7 +3,7 @@
 
 Options_panel::Options_panel() :
     vep_ptr(nullptr),
-    aquisition_status(false),
+    acquisition_status(false),
     CH_N_val(0),
     timebase_val(1000), // 1000ns = 1us na podzia³kê, czyli 10us na ekran
     channels({ Channel_settings(), Channel_settings() })
@@ -18,9 +18,9 @@ void Options_panel::initialize()
 
 // ========= Obsluga przyciskow =========
 
-void Options_panel::Toggle_aquisition()
+void Options_panel::Toggle_acquisition()
 {
-    aquisition_status = !aquisition_status;
+    acquisition_status = !acquisition_status;
 }
 
 void Options_panel::Toggle_channel()
@@ -131,4 +131,18 @@ void Options_panel::Update_num_val(Setting_type setting, int16_t val)
     }
 
     Update_btn_text(setting);
+}
+
+void Options_panel::set_buttons_touchability(bool val)
+{
+    Acquisition_btn.setTouchable(val);
+    Channel_btn.setTouchable(val);
+    Ch_visib_btn.setTouchable(val);
+    Ch_type_btn.setTouchable(val);
+    Ch_trig_btn.setTouchable(val);
+    Ch_scale_btn.setTouchable(val);
+    Ch_y_pos_btn.setTouchable(val);
+    Timebase_btn.setTouchable(val);
+    Meas_btn.setTouchable(val);
+    FFT_btn.setTouchable(val);
 }

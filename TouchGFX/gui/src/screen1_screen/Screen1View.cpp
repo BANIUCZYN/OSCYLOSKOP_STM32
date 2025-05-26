@@ -1,9 +1,7 @@
 #include <gui/screen1_screen/Screen1View.hpp>
+#include <cmath>
 
-Screen1View::Screen1View()
-{
-
-}
+Screen1View::Screen1View() : tick_counter(0) {}
 
 void Screen1View::setupScreen()
 {
@@ -16,4 +14,12 @@ void Screen1View::setupScreen()
 void Screen1View::tearDownScreen()
 {
     Screen1ViewBase::tearDownScreen();
+}
+
+// ============== DODANE FUNKCYIE ===============
+
+void Screen1View::handleTickEvent() // TU BEDZIE W PRZYSZLOSCI ODBIERANIE DANYCH Z ADC I ICH OBRÓBKA (FILTRY ITP.)
+{
+    tick_counter++;
+    Oscillograph.addDataPoint(((sinf(tick_counter * 0.5f) + 8) * 5) + (sinf(tick_counter * 0.05f) * 30) + rand() % 10);
 }

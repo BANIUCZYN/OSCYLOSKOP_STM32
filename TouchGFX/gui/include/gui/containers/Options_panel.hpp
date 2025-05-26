@@ -15,7 +15,7 @@ class Options_panel : public Options_panelBase
 private:
     Value_editor_panel* vep_ptr;
 
-    bool aquisition_status;
+    bool acquisition_status;
     uint8_t CH_N_val;
     int16_t timebase_val; // To musi byæ tu, a nie jako atrybut Channel_settings bo nie zale¿y od kana³u
 
@@ -35,7 +35,7 @@ public:
     int16_t get_curr_ch_num_val(Setting_type setting) const { return channels[CH_N_val].get_ch_num_val(setting); } // channels[CH_N_val].get_ch_num_val(setting)
 
     // Obsluga przeciskow
-    virtual void Toggle_aquisition();
+    virtual void Toggle_acquisition();
     virtual void Toggle_channel();
     virtual void Toggle_ch_visib();
     virtual void Toggle_ch_type();
@@ -44,6 +44,8 @@ public:
     virtual void Edit_y_pos_val() { Edit_val_in_VEP(CH_Y_POS); }
     virtual void Edit_timebase_val() { Edit_val_in_VEP(TIMEBASE); }
     void Edit_val_in_VEP(Setting_type setting);
+
+    void set_buttons_touchability(bool val);
 
     void set_VEP_ptr(Value_editor_panel* vep) { vep_ptr = vep; }
 

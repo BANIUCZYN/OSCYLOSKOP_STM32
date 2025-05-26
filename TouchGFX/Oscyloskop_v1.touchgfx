@@ -6,6 +6,40 @@
         "CanvasBufferSize": 12000,
         "Components": [
           {
+            "Type": "Line",
+            "Name": "vert_line",
+            "X": 290,
+            "Y": 30,
+            "Width": 20,
+            "Height": 420,
+            "Color": {
+              "Red": 5,
+              "Green": 105
+            },
+            "StartX": 10.0,
+            "EndX": 10.0,
+            "EndY": 420.0,
+            "LineWidth": 2.0,
+            "LineEndingStyle": "Square"
+          },
+          {
+            "Type": "Line",
+            "Name": "hori_line",
+            "X": 30,
+            "Y": 230,
+            "Width": 540,
+            "Height": 20,
+            "Color": {
+              "Red": 5,
+              "Green": 105
+            },
+            "StartY": 10.0,
+            "EndX": 540.0,
+            "EndY": 10.0,
+            "LineWidth": 2.0,
+            "LineEndingStyle": "Square"
+          },
+          {
             "Type": "Box",
             "Name": "frame_box4",
             "X": 570,
@@ -57,7 +91,7 @@
             "DataSeed": 1755024946,
             "NumberOfValues": 100,
             "MaxY": 100.0,
-            "Precision": "1",
+            "Precision": "0.01",
             "LastIndex": 99,
             "XAxisScale": 1.0,
             "InsertRandomValues": true,
@@ -109,6 +143,7 @@
             "Name": "VEP",
             "Width": 800,
             "Height": 480,
+            "Visible": false,
             "CustomContainerDefinitionName": "Value_editor_panel"
           }
         ],
@@ -781,7 +816,7 @@
           },
           {
             "Type": "FlexButton",
-            "Name": "Aquisition_btn",
+            "Name": "Acquisition_btn",
             "X": 140,
             "Y": 10,
             "Width": 50,
@@ -817,7 +852,7 @@
             "Name": "Aquisition_txt",
             "X": 10,
             "Y": 18,
-            "Width": 110,
+            "Width": 121,
             "Height": 24,
             "TextId": "__SingleUse_6X5U",
             "TextRotation": "0",
@@ -908,10 +943,10 @@
             }
           },
           {
-            "InteractionName": "Aquisition_btn_pressed",
+            "InteractionName": "Acquisition_btn_pressed",
             "Trigger": {
               "Type": "TriggerClicked",
-              "TriggerComponent": "Aquisition_btn"
+              "TriggerComponent": "Acquisition_btn"
             },
             "Action": {
               "Type": "ActionCustom",

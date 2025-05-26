@@ -24,6 +24,8 @@ private:
 
     void edit_edited_val(char operation);
 
+    void set_other_panels_touchability(bool val);
+
 public:
     Value_editor_panel();
     virtual ~Value_editor_panel() {}
