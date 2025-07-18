@@ -89,12 +89,11 @@
             "Width": 600,
             "Height": 480,
             "DataSeed": 1755024946,
-            "NumberOfValues": 100,
-            "MaxY": 100.0,
-            "Precision": "0.01",
-            "LastIndex": 99,
+            "NumberOfValues": 540,
+            "MaxY": 8192.0,
+            "Precision": "0.1",
+            "LastIndex": 539,
             "XAxisScale": 1.0,
-            "InsertRandomValues": true,
             "LabelSizeTop": 30,
             "LabelSizeBottom": 30,
             "LabelSizeLeft": 30,
@@ -117,7 +116,7 @@
                 "Red": 5,
                 "Green": 105
               },
-              "Interval": 10.0,
+              "Interval": 54.0,
               "LineWidth": 1
             },
             "YAxisGrid": {
@@ -126,7 +125,7 @@
                 "Red": 5,
                 "Green": 105
               },
-              "Interval": 10.0,
+              "Interval": 821.0,
               "LineWidth": 1
             }
           },
@@ -952,6 +951,15 @@
               "Type": "ActionCustom",
               "FunctionName": "Toggle_aquisition"
             }
+          },
+          {
+            "InteractionName": "Interaction1",
+            "Trigger": {
+              "Type": "TriggerNone"
+            },
+            "Action": {
+              "Type": "ActionNone"
+            }
           }
         ],
         "CustomTriggers": [
@@ -1410,7 +1418,7 @@
     "SubFamily": "STM32F469/479",
     "Toolchain": "STM32CubeIDE",
     "Platform": "m4",
-    "ProjectFile": "../STM32F469I-DISCO.ioc",
+    "ProjectFile": "../STM32F469I-disco.ioc",
     "OptionalComponentsRoot": "../Middlewares/ST/touchgfx_components",
     "OptionalComponents": [],
     "AdditionalFeatures": [

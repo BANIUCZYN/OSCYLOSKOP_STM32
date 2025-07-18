@@ -16,6 +16,6 @@ enum Setting_type {
 // #define CH_Y_POS_MIN = 0 // <- zdefiniowane w VEP
 // #define CH_Y_POS_MIN = 0 // <- zdefiniowane w VEP
 #define TIMEBASE_MAX 30000
-#define TIMEBASE_MIN 10 // to zdefiniowac ponownie w zaleznosci od mozliwosci zegara + prescalera + cykli adc
+#define TIMEBASE_MIN 32 // 540(px) * 1.(6)us / 10(divs) = 32.4us
 
 #endif // SETTING_TYPES_HPP

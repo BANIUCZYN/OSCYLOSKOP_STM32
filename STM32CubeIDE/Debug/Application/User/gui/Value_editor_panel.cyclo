@@ -1,0 +1,29 @@
+../../Middlewares/ST/touchgfx/framework/include/touchgfx/Drawable.hpp:315:18:virtual void touchgfx::Drawable::setX(int16_t)	1
+../../Middlewares/ST/touchgfx/framework/include/touchgfx/Drawable.hpp:327:18:virtual void touchgfx::Drawable::setY(int16_t)	1
+../../Middlewares/ST/touchgfx/framework/include/touchgfx/Drawable.hpp:356:18:virtual void touchgfx::Drawable::setWidth(int16_t)	1
+../../Middlewares/ST/touchgfx/framework/include/touchgfx/Drawable.hpp:368:18:virtual void touchgfx::Drawable::setHeight(int16_t)	1
+../../Middlewares/ST/touchgfx/framework/include/touchgfx/Drawable.hpp:378:18:virtual void touchgfx::Drawable::childGeometryChanged()	1
+../../Middlewares/ST/touchgfx/framework/include/touchgfx/Drawable.hpp:389:18:virtual void touchgfx::Drawable::handleClickEvent(const touchgfx::ClickEvent&)	1
+../../Middlewares/ST/touchgfx/framework/include/touchgfx/Drawable.hpp:401:18:virtual void touchgfx::Drawable::handleGestureEvent(const touchgfx::GestureEvent&)	1
+../../Middlewares/ST/touchgfx/framework/include/touchgfx/Drawable.hpp:490:18:virtual void touchgfx::Drawable::handleDragEvent(const touchgfx::DragEvent&)	1
+../../Middlewares/ST/touchgfx/framework/include/touchgfx/Drawable.hpp:501:18:virtual void touchgfx::Drawable::handleTickEvent()	1
+../../Middlewares/ST/touchgfx/framework/include/touchgfx/Drawable.hpp:588:18:virtual void touchgfx::Drawable::moveTo(int16_t, int16_t)	1
+../../Middlewares/ST/touchgfx/framework/include/touchgfx/containers/Container.hpp:165:23:virtual touchgfx::Drawable* touchgfx::Container::getFirstChild()	1
+../../TouchGFX/gui/include/gui/containers/Value_editor_panel.hpp:31:13:Value_editor_panel::~Value_editor_panel()	1
+../../TouchGFX/gui/include/gui/containers/Value_editor_panel.hpp:31:13:virtual Value_editor_panel::~Value_editor_panel()	1
+../../Middlewares/ST/touchgfx/framework/include/touchgfx/Drawable.hpp:121:18:virtual void touchgfx::Drawable::invalidateContent() const	2
+C:/TouchGFXProjects/Oscyloskop_v1/TouchGFX/gui/src/containers/Value_editor_panel.cpp:5:1:Value_editor_panel::Value_editor_panel()	1
+C:/TouchGFXProjects/Oscyloskop_v1/TouchGFX/gui/src/containers/Value_editor_panel.cpp:80:6:void Value_editor_panel::set_edited_val_limits(Setting_type, int16_t, int16_t)	1
+C:/TouchGFXProjects/Oscyloskop_v1/TouchGFX/gui/src/containers/Value_editor_panel.cpp:86:6:void Value_editor_panel::update_dependent_limits()	2
+C:/TouchGFXProjects/Oscyloskop_v1/TouchGFX/gui/src/containers/Value_editor_panel.cpp:98:6:void Value_editor_panel::update_edited_val_text()	1
+C:/TouchGFXProjects/Oscyloskop_v1/TouchGFX/gui/src/containers/Value_editor_panel.cpp:104:9:int16_t Value_editor_panel::get_digit(int16_t)	2
+C:/TouchGFXProjects/Oscyloskop_v1/TouchGFX/gui/src/containers/Value_editor_panel.cpp:116:6:bool Value_editor_panel::check_val_legality(char)	10
+C:/TouchGFXProjects/Oscyloskop_v1/TouchGFX/gui/src/containers/Value_editor_panel.cpp:40:6:void Value_editor_panel::edit_edited_val(char)	6
+../../TouchGFX/gui/include/gui/containers/Value_editor_panel.hpp:37:18:virtual void Value_editor_panel::Value_x10_division()	1
+../../TouchGFX/gui/include/gui/containers/Value_editor_panel.hpp:36:18:virtual void Value_editor_panel::Value_x10()	1
+../../TouchGFX/gui/include/gui/containers/Value_editor_panel.hpp:34:18:virtual void Value_editor_panel::Value_increment()	1
+../../TouchGFX/gui/include/gui/containers/Value_editor_panel.hpp:35:18:virtual void Value_editor_panel::Value_decrement()	1
+C:/TouchGFXProjects/Oscyloskop_v1/TouchGFX/gui/src/containers/Value_editor_panel.cpp:152:6:void Value_editor_panel::set_other_panels_touchability(bool)	1
+C:/TouchGFXProjects/Oscyloskop_v1/TouchGFX/gui/src/containers/Value_editor_panel.cpp:30:6:virtual void Value_editor_panel::Value_OK()	1
+C:/TouchGFXProjects/Oscyloskop_v1/TouchGFX/gui/src/containers/Value_editor_panel.cpp:67:6:void Value_editor_panel::set_edited_val(Setting_type, int16_t)	2
+C:/TouchGFXProjects/Oscyloskop_v1/TouchGFX/gui/src/containers/Value_editor_panel.cpp:21:6:virtual void Value_editor_panel::initialize()	1

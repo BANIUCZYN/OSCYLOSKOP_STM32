@@ -1,0 +1,31 @@
+../../Middlewares/ST/touchgfx/framework/include/touchgfx/Drawable.hpp:315:18:virtual void touchgfx::Drawable::setX(int16_t)	0	static
+../../Middlewares/ST/touchgfx/framework/include/touchgfx/Drawable.hpp:327:18:virtual void touchgfx::Drawable::setY(int16_t)	0	static
+../../Middlewares/ST/touchgfx/framework/include/touchgfx/Drawable.hpp:356:18:virtual void touchgfx::Drawable::setWidth(int16_t)	0	static
+../../Middlewares/ST/touchgfx/framework/include/touchgfx/Drawable.hpp:368:18:virtual void touchgfx::Drawable::setHeight(int16_t)	0	static
+../../Middlewares/ST/touchgfx/framework/include/touchgfx/Drawable.hpp:378:18:virtual void touchgfx::Drawable::childGeometryChanged()	0	static
+../../Middlewares/ST/touchgfx/framework/include/touchgfx/Drawable.hpp:389:18:virtual void touchgfx::Drawable::handleClickEvent(const touchgfx::ClickEvent&)	0	static
+../../Middlewares/ST/touchgfx/framework/include/touchgfx/Drawable.hpp:401:18:virtual void touchgfx::Drawable::handleGestureEvent(const touchgfx::GestureEvent&)	0	static
+../../Middlewares/ST/touchgfx/framework/include/touchgfx/Drawable.hpp:490:18:virtual void touchgfx::Drawable::handleDragEvent(const touchgfx::DragEvent&)	0	static
+../../Middlewares/ST/touchgfx/framework/include/touchgfx/Drawable.hpp:501:18:virtual void touchgfx::Drawable::handleTickEvent()	0	static
+../../Middlewares/ST/touchgfx/framework/include/touchgfx/Drawable.hpp:588:18:virtual void touchgfx::Drawable::moveTo(int16_t, int16_t)	4	static
+../../Middlewares/ST/touchgfx/framework/include/touchgfx/containers/Container.hpp:165:23:virtual touchgfx::Drawable* touchgfx::Container::getFirstChild()	0	static
+../../TouchGFX/generated/gui_generated/include/gui_generated/containers/Options_panelBase.hpp:62:18:virtual void Options_panelBase::Toggle_aquisition()	0	static
+C:/TouchGFXProjects/Oscyloskop_v1/TouchGFX/gui/src/containers/Options_panel.cpp:21:6:virtual void Options_panel::Toggle_acquisition()	0	static
+../../TouchGFX/gui/include/gui/containers/Options_panel.hpp:26:13:Options_panel::~Options_panel()	8	static
+../../TouchGFX/gui/include/gui/containers/Options_panel.hpp:26:13:virtual Options_panel::~Options_panel()	8	static
+../../Middlewares/ST/touchgfx/framework/include/touchgfx/Drawable.hpp:121:18:virtual void touchgfx::Drawable::invalidateContent() const	0	static
+../../TouchGFX/generated/gui_generated/include/gui_generated/containers/Options_panelBase.hpp:75:18:virtual void Options_panelBase::emitTrigger1Callback()	8	static
+C:/TouchGFXProjects/Oscyloskop_v1/TouchGFX/gui/src/containers/Options_panel.cpp:4:1:Options_panel::Options_panel()	8	static
+C:/TouchGFXProjects/Oscyloskop_v1/TouchGFX/gui/src/containers/Options_panel.cpp:53:6:void Options_panel::Edit_val_in_VEP(Setting_type)	16	static
+../../TouchGFX/gui/include/gui/containers/Options_panel.hpp:45:18:virtual void Options_panel::Edit_timebase_val()	0	static
+../../TouchGFX/gui/include/gui/containers/Options_panel.hpp:44:18:virtual void Options_panel::Edit_y_pos_val()	0	static
+../../TouchGFX/gui/include/gui/containers/Options_panel.hpp:43:18:virtual void Options_panel::Edit_scale_val()	0	static
+C:/TouchGFXProjects/Oscyloskop_v1/TouchGFX/gui/src/containers/Options_panel.cpp:88:6:void Options_panel::Update_btn_text(Setting_type)	8	static
+C:/TouchGFXProjects/Oscyloskop_v1/TouchGFX/gui/src/containers/Options_panel.cpp:35:6:virtual void Options_panel::Toggle_ch_visib()	8	static
+C:/TouchGFXProjects/Oscyloskop_v1/TouchGFX/gui/src/containers/Options_panel.cpp:41:6:virtual void Options_panel::Toggle_ch_type()	8	static
+C:/TouchGFXProjects/Oscyloskop_v1/TouchGFX/gui/src/containers/Options_panel.cpp:47:6:virtual void Options_panel::Toggle_ch_trig()	8	static
+C:/TouchGFXProjects/Oscyloskop_v1/TouchGFX/gui/src/containers/Options_panel.cpp:79:6:void Options_panel::Update_all_disp_ch_settings()	8	static
+C:/TouchGFXProjects/Oscyloskop_v1/TouchGFX/gui/src/containers/Options_panel.cpp:26:6:virtual void Options_panel::Toggle_channel()	8	static
+C:/TouchGFXProjects/Oscyloskop_v1/TouchGFX/gui/src/containers/Options_panel.cpp:121:6:void Options_panel::Update_num_val(Setting_type, int16_t)	16	static
+C:/TouchGFXProjects/Oscyloskop_v1/TouchGFX/gui/src/containers/Options_panel.cpp:136:6:void Options_panel::set_buttons_touchability(bool)	0	static
+C:/TouchGFXProjects/Oscyloskop_v1/TouchGFX/gui/src/containers/Options_panel.cpp:12:6:virtual void Options_panel::initialize()	0	static
